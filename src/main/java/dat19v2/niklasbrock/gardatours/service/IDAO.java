@@ -6,5 +6,4 @@ public interface IDAO {
     public void delete();
     public String select();
 
-
 }
