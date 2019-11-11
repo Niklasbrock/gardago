@@ -2,10 +2,9 @@ package dat19v2.niklasbrock.gardatours.service;
 
 public interface DAO {
 
-    public void insert();
-    public void delete();
-    public void select();
-
-    public void frederiktisser();
+//    Andreas er en luder xd;
+//    Og Frederik er en bitch
+    //MIKAEL ER RELEVANT
+    // NIKLAS ER MIN LILLE BITCH :3
 
 }
