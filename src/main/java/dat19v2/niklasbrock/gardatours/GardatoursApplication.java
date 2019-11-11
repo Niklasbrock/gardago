@@ -9,5 +9,4 @@ public class GardatoursApplication {
     public static void main(String[] args) {
         SpringApplication.run(GardatoursApplication.class, args);
     }
-
 }
