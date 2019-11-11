@@ -5,4 +5,5 @@ public interface DAO {
 //    Andreas er en luder xd;
 //    Og Frederik er en bitch
     //MIKAEL ER RELEVANT
+    // NIKLAS ER MIN LILLE BITCH :3
 }
