@@ -6,5 +6,4 @@ public interface DAO {
     public void delete();
     public void select();
 
-
 }
