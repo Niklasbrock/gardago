@@ -7,4 +7,6 @@ public interface DAO {
     //MIKAEL ER RELEVANT
     // NIKLAS ER MIN LILLE BITCH :3
 
+    //TIS HEHE
+    //TIS HEHE
 }
