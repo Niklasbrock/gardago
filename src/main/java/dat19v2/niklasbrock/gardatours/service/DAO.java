@@ -6,8 +6,5 @@ public interface DAO {
     public void delete();
     public void select();
 
-    public void frederiktisser();
 
-    //TIS HEHE
-    //TIS HEHE
 }
