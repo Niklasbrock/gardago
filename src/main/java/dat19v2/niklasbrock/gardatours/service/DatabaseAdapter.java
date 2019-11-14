@@ -2,7 +2,6 @@ package dat19v2.niklasbrock.gardatours.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 
 public class DatabaseAdapter {
 
@@ -36,4 +35,3 @@ public class DatabaseAdapter {
         return con;
     }
 }
-
