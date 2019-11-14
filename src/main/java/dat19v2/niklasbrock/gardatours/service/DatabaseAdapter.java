@@ -6,26 +6,32 @@ import java.sql.SQLException;
 
 public class DatabaseAdapter {
 
-    private static String url = "jdbc:mysql://localhost:3306/prototypeeop";
-    private static String driverName = "com.mysql.jdbc.Driver";
-    private static String username = "root";
-    private static String password = "triala";
-    private static Connection con;
-    private static String urlstring;
+    private static DatabaseAdapter instance;
 
-    public static Connection getConnection() {
+    private Connection con;
+    String username = "root";
+    String password = "pw";
+    String path = "jdbc:mysql://localhost:3306/KEA?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+
+
+    private DatabaseAdapter(){
         try {
-            Class.forName(driverName);
-            try {
-                con = DriverManager.getConnection(urlstring, username, password);
-            } catch (SQLException ex) {
-                // log an exception. fro example:
-                System.out.println("Failed to create the database connection.");
-            }
-        } catch (ClassNotFoundException ex) {
-            // log an exception. for example:
-            System.out.println("Driver not found.");
+            System.out.println(username+" has connected to the database.\n");
+            this.con = DriverManager.getConnection(path, username, password);
+
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
         }
+    }
+
+    public static DatabaseAdapter getInstance(){
+        if(instance==null){
+            instance = new DatabaseAdapter();
+        }
+        return instance;
+    }
+
+    public Connection getConnection(){
         return con;
     }
 }
