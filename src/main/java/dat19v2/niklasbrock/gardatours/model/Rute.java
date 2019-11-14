@@ -5,7 +5,9 @@ public class Ruter {
     private int pris;
     private String beskrivelse;
 
-    public Ruter(String navn, int pris, String beskrivelse) {
+    public Rute() {}
+
+    public Rute(String navn, int pris, String beskrivelse) {
         this.navn = navn;
         this.pris = pris;
         this.beskrivelse = beskrivelse;

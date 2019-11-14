@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-
+<div class="container text-center">
+    <p th:text="${bestilling.getKunde().getNavn()}"></p>
+    <br>
+    <p th:text="${bestilling.getKunde().getTlf()}"></p>
+    <br>
+    <p th:text="${bestilling.getRute().getNavn()}"></p>
+    <br>
+    <p th:text="${bestilling.getAntal()}"></p>
+    <br>
+    <p th:text="${bestilling.getPris()}"></p>
+</div>
 </body>
 </html>
