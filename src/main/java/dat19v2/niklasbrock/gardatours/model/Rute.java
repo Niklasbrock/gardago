@@ -1,9 +1,11 @@
 package dat19v2.niklasbrock.gardatours.model;
 
-public class Rute {
+public class Ruter {
     private String navn;
     private int pris;
     private String beskrivelse;
+
+    public Rute() {}
 
     public Rute(String navn, int pris, String beskrivelse) {
         this.navn = navn;

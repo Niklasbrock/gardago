@@ -10,7 +10,8 @@ public class DatabaseAdapter {
     private Connection con;
     String username = "root";
     String password = "pw";
-    String path = "jdbc:mysql://localhost:3306/KEA?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    String path = "jdbc:mysql://localhost:3306/Gardago?useUnicode=true" +
+            "&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
 
     private DatabaseAdapter(){
