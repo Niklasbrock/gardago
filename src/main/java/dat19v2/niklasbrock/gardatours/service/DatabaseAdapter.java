@@ -9,7 +9,7 @@ public class DatabaseAdapter {
 
     private Connection con;
     String username = "root";
-    String password = "pw";
+    String password = "rootkode";
     String path = "jdbc:mysql://localhost:3306/Gardago?useUnicode=true" +
             "&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
