@@ -15,8 +15,8 @@ public class UdvalgController {
     }
     @GetMapping("/tour1")
     public String tour1(HttpSession httpSession, Model model) {
-        Ruter rute1 = new Ruter("Garda til helvede", 666, "Du har valgt turen fra Garda til Helvede, en af vores mest luksuriøse valg");
-        model.addAttribute("rute1", rute1);
+        Ruter rute = new Ruter("Garda til helvede", 666, "Du har valgt turen fra Garda til Helvede, en af vores mest luksuriøse valg");
+        model.addAttribute("rute", rute);
         return "checkout";
     }
     @GetMapping("/tour2")
