@@ -5088,7 +5088,7 @@ a.badge-dark:focus, a.badge-dark.focus {
 
 @media (min-width: 300px) {
   .jumbotron {
-    padding: 1rem 1rem;
+    padding: 0.2rem 1rem;
   }
 }
 
