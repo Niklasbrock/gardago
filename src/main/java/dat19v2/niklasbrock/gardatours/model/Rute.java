@@ -1,6 +1,6 @@
 package dat19v2.niklasbrock.gardatours.model;
 
-public class Ruter {
+public class Rute {
     private String navn;
     private int pris;
     private String beskrivelse;

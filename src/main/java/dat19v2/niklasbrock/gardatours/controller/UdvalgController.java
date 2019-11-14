@@ -1,7 +1,7 @@
 package dat19v2.niklasbrock.gardatours.controller;
 
 import dat19v2.niklasbrock.gardatours.model.Rute;
-import dat19v2.niklasbrock.gardatours.service.RuterDAO;
+import dat19v2.niklasbrock.gardatours.service.RuteDAO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,30 +18,30 @@ public class UdvalgController {
     }
     @GetMapping("/tour1")
     public String tour1(HttpSession httpSession, Model model) {
-        RuterDAO ruterDAO = new RuterDAO();
-        List<Rute> ruter = ruterDAO.select();
+        RuteDAO rutedao = new RuteDAO();
+        List<Rute> ruter = rutedao.select();
         model.addAttribute("rute", ruter.get( 0 ) );
         return "checkout";
     }
 
     @GetMapping("/tour2")
     public String tour2( Model model ) {
-        RuterDAO ruterDAO = new RuterDAO();
-        List<Rute> ruter = ruterDAO.select();
+        RuteDAO rutedao = new rutedao();
+        List<Rute> ruter = rutedao.select();
         model.addAttribute("rute", ruter.get( 1 ) );
         return "checkout";
     }
     @GetMapping("/tour3")
     public String tour3( Model model ) {
-        RuterDAO ruterDAO = new RuterDAO();
-        List<Rute> ruter = ruterDAO.select();
+        RuteDAO rutedao = new rutedao();
+        List<Rute> ruter = rutedao.select();
         model.addAttribute("rute", ruter.get( 2 ) );
         return "checkout";
     }
     @GetMapping("/tour4")
     public String tour5( Model model ) {
-        RuterDAO ruterDAO = new RuterDAO();
-        List<Rute> ruter = ruterDAO.select();
+        RuteDAO rutedao = new rutedao();
+        List<Rute> ruter = rutedao.select();
         model.addAttribute("rute", ruter.get( 3 ) );
         return "checkout";
     }
