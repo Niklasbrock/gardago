@@ -31,6 +31,7 @@
             </td>
             <td data-th="Price" th:text="${rute.getPris()}"></td>
             <td data-th="Quantity">
+                <form method="post" action="/checkout">
                 <input type="number" name="antal" class="form-control text-center" value="1">
             </td>
             <td data-th="Subtotal" class="text-center" th:text="${rute.getPris()}"></td>
@@ -48,12 +49,12 @@
             <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
             <td colspan="2" class="hidden-xs"></td>
             <td class="hidden-xs text-center" th:text="${rute.getPris()}"><strong> Total </strong></td>
-            <td><a href="/confirmation" class="btn btn-success btn-block">Checkout <i class="fa fa-angle-right"></i></a></td>
+            <td><button type="submit" class="btn btn-success btn-block" >Checkout <i class="fa fa-angle-right"></i></button></td>
         </tr>
         <div class="container">
-            <form method="post">
-                <input class="form-text text-center" name="navn" autofocus placeholder="Fulde navn">
-                <input class="form-text text-center" name="tlf" placeholder="Telefon nummer">
+
+                <input class="" name="navn" autofocus autocomplete="false" placeholder="Fulde navn">
+                <input class="" name="tlf" autocomplete="false" placeholder="Telefon nummer">
             </form>
         </div>
         </tfoot>

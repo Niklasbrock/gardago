@@ -1,6 +1,6 @@
 package dat19v2.niklasbrock.gardatours.service;
 
-public class RuterDAO implements IDAO{
+public class RuteDAO implements IDAO{
 
     public void insert(){};
     public void delete(){};

@@ -1,6 +1,6 @@
 package dat19v2.niklasbrock.gardatours.controller;
 
-import dat19v2.niklasbrock.gardatours.model.Ruter;
+import dat19v2.niklasbrock.gardatours.model.Rute;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +15,9 @@ public class UdvalgController {
     }
     @GetMapping("/tour1")
     public String tour1(HttpSession httpSession, Model model) {
-        Ruter rute = new Ruter("Garda til helvede", 666, "Du har valgt turen fra Garda til Helvede, en af vores mest luksuriøse valg");
+        Rute rute = new Rute("Garda til helvede", 666, "Du har valgt turen fra Garda til Helvede, en af vores mest luksuriøse valg");
         model.addAttribute("rute", rute);
+        httpSession.setAttribute("rute", rute);
         return "checkout";
     }
     @GetMapping("/tour2")
