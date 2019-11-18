@@ -3,6 +3,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link type="text/css" th:href="@{css/index.css}" rel="stylesheet"/>
+<link href="javascript/script.js" rel="script"/>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
@@ -32,7 +33,7 @@
                     </div>
                 </div>
             </td>
-                <input type="number" name="antal" class="form-control text-center" value="1">
+                <input type="number" name="antal" id="antal" class="form-control text-center" value="1">
                 </td>
                 <td data-th="Quantity">
                 <td data-th="Subtotal" class="text-center" th:text="${rute.getPris()}"></td>
@@ -64,7 +65,7 @@
                 reserving
             </a></td>
             <td colspan="2" class="hidden-xs"></td>
-            <td class="hidden-xs text-center" th:text="${rute.getPris()}"><strong> Total </strong></td>
+            <td id="totalPris"class="hidden-xs text-center" th:value="${rute.getPris()}"><strong><pris></pris> Total </strong></td>
             <td><button type="submit" class="btn btn-success btn-block" >Confirm reservation <i
                     class="fa fa-angle-right"></i></button></td>
         </tr>
