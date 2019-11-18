@@ -8,7 +8,7 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<form method="post" action="/checkout">
+<form>
 <div class="container">
     <table id="cart" class="table table-hover table-condensed">
         <thead>
@@ -42,6 +42,7 @@
                 <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
             </td>
         </tr>
+        <td data-th="Price" th:text="${rute.getPris()}"></td>
         </tbody>
         <tfoot>
         <tr class="visible-xs">
@@ -49,7 +50,7 @@
         </tr>
         <tr>
             <td>
-                <input class="size form-control" type="text" ="navn" size="20"
+                <input class="size form-control" type="text" name="navn" size="20"
                        placeholder="Full name" autocomplete="false">
             </td>
         </tr>
