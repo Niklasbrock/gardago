@@ -3,9 +3,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link type="text/css" th:href="@{css/index.css}" rel="stylesheet"/>
-<link href="javascript/script.js" rel="script"/>
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../static/javascript/script.js"></script>
+<!--TODO LINK JS CORRECTLY-->
 <!------ Include the above in your HEAD tag ---------->
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -18,11 +17,12 @@
             <th style="width:50%">Product</th>
             <th style="width:10%">Price</th>
             <th style="width:8%">Quantity</th>
-            <th style="width:22%" class="text-center">Subtotal</th>
+            <th style="width:22%" class="text-center">Total</th>
             <th style="width:10%"></th>
         </tr>
         </thead>
         <tbody>
+
         <tr>
             <td data-th="Product">
                 <div class="row">
@@ -36,23 +36,30 @@
             <td data-th="Price" th:text="${rute.getPris()}"></td>
             <td data-th="Quantity">
                 <!-- <form method="post" action="/checkout"> -->
-                <input type="number" name="antal" class="form-control text-center" value="1">
+                <input type="number" id="antal" onchange="updateAntal()" name="antal" class="form-control text-center" value="1">
             </td>
-            <td data-th="Subtotal" class="text-center" th:text="${rute.getPris()}"></td>
+            <td class="hidden-xs text-center">
+                <input id="pris" readonly style="border: none; text-align: right" type="number" th:value="${rute.getPris()}">
+            </td>
             <td class="actions" data-th="">
                 <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
                 <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
             </td>
-                <input type="number" name="antal" id="antal" class="form-control text-center" value="1">
-                </td>
-                <td data-th="Quantity">
-                <td data-th="Subtotal" class="text-center" th:text="${rute.getPris()}"></td>
-                <td class="actions" data-th="">
-                    <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-                </td>
+
         </tr>
-        <td data-th="Price" th:text="${rute.getPris()}"></td>
+        <script>
+            document.getElementById("pris").innerHTML = updateAntal();
+            function updateAntal() {
+                //TODO Get Thymeleaf price to work here.
+                // var pris = document.getElementById("pris").value;
+                var pris = 666;
+                var antal = document.getElementById("antal").value;
+                pris *= antal;
+                document.getElementById("pris").setAttribute("value", pris);
+                return pris;
+            }
+
+        </script>
         </tbody>
         <tfoot>
         <tr class="visible-xs">
@@ -75,10 +82,9 @@
                 reserving
             </a></td>
             <td colspan="2" class="hidden-xs"></td>
-            <td class="hidden-xs text-center" th:text="${rute.getPris()}"><strong> Total </strong></td>
-            <td><button type="submit" class="btn btn-success btn-block">Confirm
-                reservation <i
-            <td id="totalPris"class="hidden-xs text-center" th:value="${rute.getPris()}"><strong><pris></pris> Total </strong></td>
+
+<!--            <td><button type="submit" class="btn btn-success btn-block">Confirm-->
+<!--                reservation <i-->
             <td><button type="submit" class="btn btn-success btn-block" >Confirm reservation <i
                     class="fa fa-angle-right"></i></button></td>
         </tr>
