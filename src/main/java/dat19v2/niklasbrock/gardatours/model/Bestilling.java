@@ -9,12 +9,14 @@ public class Bestilling {
     @Max(10)
     private int antal;
     private int pris;
+    private int totalpris;
 
     public Bestilling(Kunde kunde, @Max(1) Rute rute, @Max(10) int antal) {
         this.kunde = kunde;
         this.rute = rute;
         this.antal = antal;
-        this.pris = antal * rute.getPris();
+        this.pris = rute.getPris();
+        this.totalpris = antal * rute.getPris();
     }
 
     public Kunde getKunde() {
@@ -47,5 +49,13 @@ public class Bestilling {
 
     public void setPris(int pris) {
         this.pris = pris;
+    }
+
+    public int getTotalpris() {
+        return totalpris;
+    }
+
+    public void setTotalpris(int totalpris) {
+        this.totalpris = totalpris;
     }
 }

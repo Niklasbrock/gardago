@@ -14,7 +14,8 @@ public class CheckoutController {
     @PostMapping("/checkout")
     public String checkout(Kunde kunde, HttpSession httpSession, Model model, int antal){
 //        (Rute) is called casting, eller at caste
-        model.addAttribute("bestilling", new Bestilling(kunde, (Rute) httpSession.getAttribute("rute"), antal));
+        Bestilling bestilling = new Bestilling(kunde, (Rute) httpSession.getAttribute("rute"), antal);
+        model.addAttribute("bestilling", bestilling);
 //        TODO Send det bestillings objekt til Databasen
         return "confirmation";
     }
