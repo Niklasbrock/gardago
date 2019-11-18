@@ -2,6 +2,7 @@ package dat19v2.niklasbrock.gardatours.service;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 public class DatabaseAdapter {
 
@@ -25,13 +26,19 @@ public class DatabaseAdapter {
     }
 
     public static DatabaseAdapter getInstance(){
-        if(instance==null){
+        if ( instance == null ) {
             instance = new DatabaseAdapter();
         }
         return instance;
     }
 
-    public Connection getConnection(){
+    public Connection getConnection() {
         return con;
+    }
+
+    public void processException(SQLException ex ) {
+        System.err.println( "Error message: " + ex.getMessage() );
+        System.err.println( "Error code: " + ex.getErrorCode() );
+        System.err.println( "SQL state: " + ex.getSQLState() );
     }
 }
