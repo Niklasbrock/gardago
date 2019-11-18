@@ -43,12 +43,13 @@ public class RuteDAO implements IRuteDAO {
     public List<Rute> select() {
         List<Rute> ruter = new ArrayList<>();
         String sql = "SELECT * FROM rute";
-        Connection connection = null;
 
-        try {
-            connection = DatabaseAdapter.getInstance().getConnection();
-            PreparedStatement ps = connection.prepareStatement( sql );
-            ResultSet rs = ps.executeQuery();
+        try (
+                Connection connection =
+                        DatabaseAdapter.getInstance().getConnection();
+                PreparedStatement ps = connection.prepareStatement( sql );
+                ResultSet rs = ps.executeQuery();
+                ) {
             while ( rs.next() ) {
                 Rute rute = new Rute();
                 rute.setPris( rs.getInt( "Pris" ) );
@@ -57,21 +58,10 @@ public class RuteDAO implements IRuteDAO {
                 ruter.add( rute );
             }
 
-            ps.close();
-            rs.close();
             return ruter;
         } catch ( SQLException ex ) {
             System.err.println( "ERROR: " + ex );
             throw new RuntimeException( ex );
-        } finally {
-            if ( connection != null ) {
-                try {
-                    connection.close();
-                } catch ( SQLException ex ) {
-                    System.err.println( "ERROR" + ex );
-                }
-            }
         }
-
     }
 }
