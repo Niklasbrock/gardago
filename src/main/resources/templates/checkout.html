@@ -8,6 +8,7 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<form method="post" action="/checkout">
 <div class="container">
     <table id="cart" class="table table-hover table-condensed">
         <thead>
@@ -32,7 +33,7 @@
             </td>
             <td data-th="Price" th:text="${rute.getPris()}"></td>
             <td data-th="Quantity">
-                <form method="post" action="/checkout">
+                <!-- <form method="post" action="/checkout"> -->
                 <input type="number" name="antal" class="form-control text-center" value="1">
             </td>
             <td data-th="Subtotal" class="text-center" th:text="${rute.getPris()}"></td>
@@ -48,7 +49,7 @@
         </tr>
         <tr>
             <td>
-                <input class="size form-control" type="text" name="navn" size="20"
+                <input class="size form-control" type="text" ="navn" size="20"
                        placeholder="Full name" autocomplete="false">
             </td>
         </tr>
@@ -64,7 +65,8 @@
             </a></td>
             <td colspan="2" class="hidden-xs"></td>
             <td class="hidden-xs text-center" th:text="${rute.getPris()}"><strong> Total </strong></td>
-            <td><button type="submit" class="btn btn-success btn-block" >Confirm reservation <i
+            <td><button type="submit" class="btn btn-success btn-block">Confirm
+                reservation <i
                     class="fa fa-angle-right"></i></button></td>
         </tr>
         </tfoot>
@@ -76,6 +78,7 @@
         </form>
     </div> -->
 </div>
+</form>
 </html>
 
 
