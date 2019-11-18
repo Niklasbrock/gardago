@@ -33,6 +33,16 @@
                     </div>
                 </div>
             </td>
+            <td data-th="Price" th:text="${rute.getPris()}"></td>
+            <td data-th="Quantity">
+                <!-- <form method="post" action="/checkout"> -->
+                <input type="number" name="antal" class="form-control text-center" value="1">
+            </td>
+            <td data-th="Subtotal" class="text-center" th:text="${rute.getPris()}"></td>
+            <td class="actions" data-th="">
+                <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+                <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+            </td>
                 <input type="number" name="antal" id="antal" class="form-control text-center" value="1">
                 </td>
                 <td data-th="Quantity">
@@ -65,6 +75,9 @@
                 reserving
             </a></td>
             <td colspan="2" class="hidden-xs"></td>
+            <td class="hidden-xs text-center" th:text="${rute.getPris()}"><strong> Total </strong></td>
+            <td><button type="submit" class="btn btn-success btn-block">Confirm
+                reservation <i
             <td id="totalPris"class="hidden-xs text-center" th:value="${rute.getPris()}"><strong><pris></pris> Total </strong></td>
             <td><button type="submit" class="btn btn-success btn-block" >Confirm reservation <i
                     class="fa fa-angle-right"></i></button></td>
