@@ -9,6 +9,8 @@
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
+    <form method="post" action="/checkout">
+
     <table id="cart" class="table table-hover table-condensed">
         <thead>
         <tr>
@@ -30,17 +32,16 @@
                     </div>
                 </div>
             </td>
-            <td data-th="Price" th:text="${rute.getPris()}"></td>
-            <td data-th="Quantity">
-                <form method="post" action="/checkout">
                 <input type="number" name="antal" class="form-control text-center" value="1">
-            </td>
-            <td data-th="Subtotal" class="text-center" th:text="${rute.getPris()}"></td>
-            <td class="actions" data-th="">
-                <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
-                <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
-            </td>
+                </td>
+                <td data-th="Quantity">
+                <td data-th="Subtotal" class="text-center" th:text="${rute.getPris()}"></td>
+                <td class="actions" data-th="">
+                    <button class="btn btn-info btn-sm"><i class="fa fa-refresh"></i></button>
+                    <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button>
+                </td>
         </tr>
+        <td data-th="Price" th:text="${rute.getPris()}"></td>
         </tbody>
         <tfoot>
         <tr class="visible-xs">
@@ -69,6 +70,7 @@
         </tr>
         </tfoot>
     </table>
+    </form>
     <!--<div class="container">
         <form method="post" action="confirmation.html">
             <input class="" name="navn" autofocus autocomplete="false" placeholder="Fulde navn">

@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -21,28 +20,32 @@ public class UdvalgController {
         RuteDAO rutedao = new RuteDAO();
         List<Rute> ruter = rutedao.select();
         model.addAttribute("rute", ruter.get( 0 ) );
+        httpSession.setAttribute("rute", ruter.get( 0 ) );
         return "checkout";
     }
 
     @GetMapping("/tour2")
-    public String tour2( Model model ) {
+    public String tour2(HttpSession httpSession, Model model ) {
         RuteDAO rutedao = new RuteDAO();
         List<Rute> ruter = rutedao.select();
         model.addAttribute("rute", ruter.get( 1 ) );
+        httpSession.setAttribute("rute", ruter.get( 1 ) );
         return "checkout";
     }
     @GetMapping("/tour3")
-    public String tour3( Model model ) {
+    public String tour3(HttpSession httpSession, Model model ) {
         RuteDAO rutedao = new RuteDAO();
         List<Rute> ruter = rutedao.select();
         model.addAttribute("rute", ruter.get( 2 ) );
+        httpSession.setAttribute("rute", ruter.get( 2 ) );
         return "checkout";
     }
     @GetMapping("/tour4")
-    public String tour5( Model model ) {
+    public String tour5(HttpSession httpSession, Model model ) {
         RuteDAO rutedao = new RuteDAO();
         List<Rute> ruter = rutedao.select();
         model.addAttribute("rute", ruter.get( 3 ) );
+        httpSession.setAttribute("rute", ruter.get( 3 ) );
         return "checkout";
     }
 //    @GetMapping("/tourvalg")
