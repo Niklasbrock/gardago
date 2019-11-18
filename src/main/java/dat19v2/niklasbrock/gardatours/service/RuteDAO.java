@@ -9,34 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RuteDAO implements IRuteDAO {
-
-    // NOTE: DOESNT MATTER....
-    public void insert() {
-        String sql = "INSERT INTO Rute" + " (Pris, Rute, Beskrivelse) " +
-                "VALUES (?, ?, ?)";
-        Connection connection = null;
-
-        try {
-            connection = DatabaseAdapter.getInstance().getConnection();
-            PreparedStatement ps = connection.prepareStatement( sql );
-            ps.setInt( 1, 666 );
-            ps.setString( 2, "Garda til helvede xD" );
-            ps.executeUpdate();
-            ps.close();
-        } catch( Exception ex ) {
-            System.err.println( "ERROR: " + ex );
-        } finally {
-            if ( connection != null ) {
-                try {
-                    connection.close();
-                } catch ( SQLException ex ) {
-                    System.err.println( "ERROR " + ex );
-                 }
-            }
-        }
-
-    }
+public class RuteDAO {
 
     public void delete(){};
 
