@@ -26,21 +26,21 @@ public class UdvalgController {
 
     @GetMapping("/tour2")
     public String tour2( Model model ) {
-        RuteDAO rutedao = new rutedao();
+        RuteDAO rutedao = new RuteDAO();
         List<Rute> ruter = rutedao.select();
         model.addAttribute("rute", ruter.get( 1 ) );
         return "checkout";
     }
     @GetMapping("/tour3")
     public String tour3( Model model ) {
-        RuteDAO rutedao = new rutedao();
+        RuteDAO rutedao = new RuteDAO();
         List<Rute> ruter = rutedao.select();
         model.addAttribute("rute", ruter.get( 2 ) );
         return "checkout";
     }
     @GetMapping("/tour4")
     public String tour5( Model model ) {
-        RuteDAO rutedao = new rutedao();
+        RuteDAO rutedao = new RuteDAO();
         List<Rute> ruter = rutedao.select();
         model.addAttribute("rute", ruter.get( 3 ) );
         return "checkout";

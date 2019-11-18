@@ -1,3 +1,16 @@
 body {
   padding-top: 56px;
 }
+
+a:visited {
+  color:white;
+  text-decoration: none;
+}
+
+a.visited {
+  color:black;
+}
+
+input.size {
+  width:400px!important;
+}

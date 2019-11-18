@@ -9,11 +9,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RuterDAO implements IRuteDAO {
+public class RuteDAO implements IRuteDAO {
 
     // NOTE: DOESNT MATTER....
     public void insert() {
-        String sql = "INSERT INTO Ruter" + " (Pris, Ruter, Beskrivelse) " +
+        String sql = "INSERT INTO Rute" + " (Pris, Rute, Beskrivelse) " +
                 "VALUES (?, ?, ?)";
         Connection connection = null;
 
@@ -42,7 +42,7 @@ public class RuterDAO implements IRuteDAO {
 
     public List<Rute> select() {
         List<Rute> ruter = new ArrayList<>();
-        String sql = "SELECT * FROM Ruter";
+        String sql = "SELECT * FROM rute";
         Connection connection = null;
 
         try {
@@ -52,7 +52,7 @@ public class RuterDAO implements IRuteDAO {
             while ( rs.next() ) {
                 Rute rute = new Rute();
                 rute.setPris( rs.getInt( "Pris" ) );
-                rute.setNavn( rs.getString( "Ruter" ) );
+                rute.setNavn( rs.getString( "Navn" ) );
                 rute.setBeskrivelse( rs.getString( "Beskrivelse" ) );
                 ruter.add( rute );
             }

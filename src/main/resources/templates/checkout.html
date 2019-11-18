@@ -2,6 +2,7 @@
 
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link type="text/css" th:href="@{css/index.css}" rel="stylesheet"/>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
@@ -46,19 +47,34 @@
             <td class="text-center"><strong>Total 1.99</strong></td>
         </tr>
         <tr>
-            <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue Shopping</a></td>
+            <td>
+                <input class="size form-control" type="text" name="navn" size="20"
+                       placeholder="Full name" autocomplete="false">
+            </td>
+        </tr>
+        <tr>
+            <td class="width">
+                <input class="size form-control" type="text" name="tlf" size="12"
+                       placeholder="Phonenumber" autocomplete="false">
+            </td>
+        </tr>
+        <tr>
+            <td><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Continue
+                reserving
+            </a></td>
             <td colspan="2" class="hidden-xs"></td>
             <td class="hidden-xs text-center" th:text="${rute.getPris()}"><strong> Total </strong></td>
-            <td><button type="submit" class="btn btn-success btn-block" >Checkout <i class="fa fa-angle-right"></i></button></td>
+            <td><button type="submit" class="btn btn-success btn-block" >Confirm reservation <i
+                    class="fa fa-angle-right"></i></button></td>
         </tr>
-        <div class="container">
-
-                <input class="" name="navn" autofocus autocomplete="false" placeholder="Fulde navn">
-                <input class="" name="tlf" autocomplete="false" placeholder="Telefon nummer">
-            </form>
-        </div>
         </tfoot>
     </table>
+    <!--<div class="container">
+        <form method="post" action="confirmation.html">
+            <input class="" name="navn" autofocus autocomplete="false" placeholder="Fulde navn">
+            <input class="" name="tlf" autocomplete="false" placeholder="Telefon nummer">
+        </form>
+    </div> -->
 </div>
 </html>
 
