@@ -3,8 +3,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <link type="text/css" th:href="@{css/index.css}" rel="stylesheet"/>
-<script type="text/javascript" src="../static/javascript/script.js"></script>
-<!--TODO LINK JS CORRECTLY-->
+<script type="text/javascript" th:src="@{javascript/script.js}"></script>
+
 <!------ Include the above in your HEAD tag ---------->
 
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -47,19 +47,6 @@
             </td>
 
         </tr>
-        <script>
-            document.getElementById("pris").innerHTML = updateAntal();
-            function updateAntal() {
-                //TODO Get Thymeleaf price to work here.
-                // var pris = document.getElementById("pris").value;
-                var pris = 666;
-                var antal = document.getElementById("antal").value;
-                pris *= antal;
-                document.getElementById("pris").setAttribute("value", pris);
-                return pris;
-            }
-
-        </script>
         </tbody>
         <tfoot>
         <tr class="visible-xs">
