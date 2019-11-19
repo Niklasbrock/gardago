@@ -11,11 +11,10 @@
 
 
 document.getElementById("pris").innerHTML = document.getElementById("pris").value;
-
 function updateAntal() {
-    var pris = document.getElementById("pris").value;
+    var pris = document.getElementById("fastpris").value;
     var antal = document.getElementById("antal").value;
-    pris *= antal;
-    document.getElementById("pris").setAttribute("value", pris);
+    var nyPris = antal * pris;
+    document.getElementById("pris").setAttribute("value", nyPris);
 }
 
