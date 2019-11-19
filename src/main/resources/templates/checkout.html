@@ -35,7 +35,7 @@
             <td data-th="Price" th:text="${rute.getPris()}"></td>
             <td data-th="Quantity">
                 <!-- <form method="post" action="/checkout"> -->
-                <input type="number" id="antal" onchange="updateAntal()" name="antal" class="form-control text-center" value="1">
+                <input type="number" id="antal" onchange="updateAntal()" name="antal" class="form-control text-center" value="1" min="0">
             </td>
             <td class="hidden-xs text-center">
                 <input id="pris" readonly style="border: none; text-align: right" type="number" th:value="${rute.getPris()}">
