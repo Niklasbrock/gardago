@@ -1,5 +1,7 @@
 package dat19v2.niklasbrock.gardatours.model;
 
+import org.springframework.stereotype.Component;
+
 import javax.validation.constraints.Max;
 
 public class Bestilling {

@@ -8,8 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-public class RuteDAO {
+public class RuteDAO{
 
     public void delete(){};
 
@@ -18,10 +17,9 @@ public class RuteDAO {
         String sql = "SELECT * FROM rute";
 
         try (
-                Connection connection =
-                        DatabaseAdapter.getInstance().getConnection();
+                Connection connection = DatabaseAdapter.getInstance().getConnection();
                 PreparedStatement ps = connection.prepareStatement( sql );
-                ResultSet rs = ps.executeQuery();
+                ResultSet rs = ps.executeQuery()
                 ) {
             while ( rs.next() ) {
                 Rute rute = new Rute();
